@@ -1,6 +1,6 @@
 -- Создание БД и пользователя (выполняется от postgres)
 CREATE DATABASE ml_predictions;
-CREATE USER ml_app WITH ENCRYPTED PASSWORD 'StrongPassword123!';
+CREATE USER ml_app WITH ENCRYPTED PASSWORD 'Ds_22112003';
 GRANT ALL PRIVILEGES ON DATABASE ml_predictions TO ml_app;
 
 -- Подключение к БД ml_predictions
