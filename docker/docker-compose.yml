@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   app:
-    image: ghcr.io/Thanoss-blip/ml-prediction-service/ml-app:latest
+    image: ghcr.io/thanoss-blip/ml-prediction-service/ml-app:latest
     container_name: ml-app
     ports:
       - "5000:5000"
