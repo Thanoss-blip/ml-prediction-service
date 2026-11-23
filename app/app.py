@@ -11,6 +11,7 @@ MODEL_PATH = os.getenv("MODEL_PATH", "model/model.pkl")
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
 
+
 def get_db():
     return psycopg2.connect(
         host=os.getenv("DB_HOST", "10.0.2.101"),
@@ -20,9 +21,11 @@ def get_db():
         sslmode=os.getenv("DB_SSLMODE", "require")
     )
 
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok"})
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -55,6 +58,7 @@ def predict():
         return jsonify({"error": f"DB error: {str(e)}"}), 500
 
     return jsonify(result)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
